@@ -1,0 +1,39 @@
+{
+  "name": "",
+  "version": "0.0.0",
+  "description": "",
+  "main": "bundle.js",
+  "dependencies": {
+    "browserify": "~3.0.0",
+    "browserify-shim": "~3.0.4"
+  },
+  "devDependencies": {
+    "browserify-shim": "~3.0.4",
+    "browserify": "~3.0.0",
+    "deamdify": "~0.1.1",
+    "debowerify": "~0.4.0",
+    "d3": "~3.3.11",
+    "underscore": "~1.5.2",
+    "watchify": "~0.4.1"
+  },
+  "browserify": {
+    "transform": ["browserify-shim", "deamdify"]
+  },
+  "browser": {
+    "jQuery": "./bower_components/jquery/jquery.min.js",
+    "bootstrap": "./bower_components/bootstrap/dist/js/bootstrap.js"
+  },
+  "browserify-shim": {
+    "bootstrap": {"exports": "bootstrap", "depends": ["jQuery:jQuery"]}
+  },
+  "scripts": {
+    "build": 
+      "browserify -x jQuery -x bootstrap -x d3 js/app.js > bundle.js",
+    "libs": "browserify -r jQuery -r bootstrap -r d3 -r underscore > libs.js",
+    "watch": 
+      "watchify -x jQuery -x bootstrap -x d3 -x underscore js/app.js -o bundle.js -dv"
+  },
+  "repository": "",
+  "author": "Xiaohan Zhang <boy198512@gmail.com>"
+}
+
