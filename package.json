@@ -31,7 +31,9 @@
       "browserify -x jQuery -x bootstrap -x d3 js/app.js > bundle.js",
     "libs": "browserify -r jQuery -r bootstrap -r d3 -r underscore > libs.js",
     "watch": 
-      "watchify -x jQuery -x bootstrap -x d3 -x underscore js/app.js -o bundle.js -dv"
+      "watchify -x jQuery -x bootstrap -x d3 -x underscore js/app.js -o bundle.js -dv",
+    "server": "python -m SimpleHTTPServer"
+
   },
   "repository": "",
   "author": "Xiaohan Zhang <boy198512@gmail.com>"
